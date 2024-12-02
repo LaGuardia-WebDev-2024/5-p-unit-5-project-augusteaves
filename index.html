@@ -1,13 +1,13 @@
 <!-- Unit 5 Project
 Requirements
-[  ] <div> and <span>
-[  ] height: and width:
-[  ] margin: and padding: 
-[  ] Three Images
+[ yes ] <div> and <span>
+[ yes ] height: and width:
+[  yes] margin: and padding: 
+[  yes] Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Flexbox
-[ no ] Feature 2 - Flip Card
+[ yes ] Feature 2 - Flip Card
 [ no ] Feature 3 - Navbar
 [ no ] Feature 4 - Shaking Animation
 [ no ] Feature 5 - Gradient Background
@@ -16,17 +16,144 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Unit 5 Project</title>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: hearts;
+        src: url(https://cdn.glitch.global/4cdc846e-c5c9-43f1-aa07-2107be68ed87/CuteBaby.otf?v=1732207754764);
+      }
+      @font-face {
+        font-family: paradise;
+      }
+      span {
+        font-family: hearts;
+        color: white;
+      }
+      h1 {
+        background-color: pink;
+      }
+      h2 {
+        background-color: pink;
+      }
+      .flip-card-back {
+        font-family: paradise9;
+      }
+      .babyflex {
+        background-color: #b0e0e6;
+        display: flex;
+        height: 200px;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 5px;
+      }
+      .photoflex {
+        background-color: pink;
+        width: 200px;
+      }
 
-<head>
-  <title>Unit 5 Project</title>
-  <meta charset="utf-8">
-  <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("https://i.ytimg.com/vi/hcMg_V3MVnE/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-DoACuAiKAgwIABABGGUgRChSMA8=&rs=AOn4CLCYH-VmnGPgAtwzdYIeSZ04YVSvLg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
 
-  </style>
-</head>
-<body>
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+      }
 
- 
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
 
-</body>
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      .flip-card-back {
+        background-color: #f8c8dc;
+        color: white;
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <span>
+        <h1>August's Build-A-Bear Birthday!</h1>
+        <h2>Celebrate me officially being an adult...</h2>
+      </span>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              src="https://cdn.glitch.global/4cdc846e-c5c9-43f1-aa07-2107be68ed87/IMG_8515.jpg?v=1732212127899"
+              alt="Avatar"
+              style="width: 300px; height: 300px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>Rockefeller Center</h1>
+            <h1>01/25/07</h1>
+            <h2>Build A Bearsssss</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="babyflex">
+        <img
+          src="https://cdn.glitch.global/4cdc846e-c5c9-43f1-aa07-2107be68ed87/IMG_0274.jpg?v=1732638015356"
+          width="200"
+          alt="street"
+          class="photoflex"
+        />
+        <img
+          src="https://cdn.glitch.global/4cdc846e-c5c9-43f1-aa07-2107be68ed87/IMG_0273.jpg?v=1732638022841"
+          width="200"
+          alt="mulan"
+          class="photoflex"
+        />
+        <img
+          src="https://cdn.glitch.global/4cdc846e-c5c9-43f1-aa07-2107be68ed87/IMG_0272.jpg?v=1732638028889"
+          width="200"
+          alt="icecream"
+          class="photoflex"
+        />
+        <img
+          src="https://cdn.glitch.global/4cdc846e-c5c9-43f1-aa07-2107be68ed87/IMG_0271.jpg?v=1732638035629"
+          width="200"
+          alt="dance"
+          class="photoflex"
+        />
+      </div>
+    </center>
+  </body>
 </html>
